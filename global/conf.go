@@ -76,7 +76,7 @@ const (
 	RUN_MODE_K8S       = "k8s"
 )
 
-var ProjectRealPath = "/Users/fenggese/Workspace/golang/src" + "/books"
+var ProjectRealPath = os.Getenv("GOPATH") + "/src/books"
 var RuntimeRealPath = ProjectRealPath + "/runtime"
 var LogPath = RuntimeRealPath + "/logs"
 

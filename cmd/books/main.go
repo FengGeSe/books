@@ -15,10 +15,10 @@ import (
 	"github.com/pkg/errors"
 
 	// This Service
+	pb "books/pb/details"
 	handlers "books/svc/client/cli/handlers"
 	grpcclient "books/svc/client/grpc"
 	httpclient "books/svc/client/http"
-	pb "pb/details"
 )
 
 var (
