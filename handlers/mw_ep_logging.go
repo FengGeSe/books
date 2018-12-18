@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	global "books/global"
 	"context"
 	"github.com/go-kit/kit/endpoint"
+	global "myservices/books/global"
 	"time"
 )
 

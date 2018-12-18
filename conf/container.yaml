@@ -1,10 +1,10 @@
-service_name: book-details
-db_book:
+service_name: books
+db_default:
   username: root
-  password: root
-  host: mysql.server
+  password: 123456
+  host: mysql
   port: 3306
-  db_name: bookinfo
+  db_name: books
   driver: mysql
   charset: utf8
   parse_time: True
@@ -13,12 +13,12 @@ db_book:
   max_idle_conns: 10
   max_open_conns: 1000
 redis:
-  addr: "redis.server:6379"
+  addr: "redis:6379"
   password: ""
   db: 0
 zipkin:
   url: http://zipkin:9411
-  service_name: book-details
+  service_name: books
   reporter:
     timeout: 5
     batch_size: 1000
@@ -33,5 +33,5 @@ debug_server:
 metrics_server:
   addr: :5004
 servers:
-  book_comments:
-    grpc: books-comments:5012
+  comments:
+    grpc: comments:5002

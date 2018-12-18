@@ -11,7 +11,7 @@ for `package echo;` truss will create the directory "echo-service".
 import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
-import comments "books/pb/comments"
+import comments "myservices/books/pb/comments"
 import _ "github.com/tuneinc/truss/deftree/googlethirdparty"
 
 import (

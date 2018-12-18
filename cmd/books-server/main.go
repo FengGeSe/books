@@ -1,10 +1,10 @@
 package main
 
 import (
-	server "books/svc/server"
+	server "myservices/books/svc/server"
 
-	global "books/global"
 	_ "github.com/mkevac/debugcharts"
+	global "myservices/books/global"
 )
 
 func main() {

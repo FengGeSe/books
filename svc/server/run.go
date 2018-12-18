@@ -10,10 +10,10 @@ import (
 	"google.golang.org/grpc"
 
 	// This Service
-	global "books/global"
-	handlers "books/handlers"
-	pb "books/pb/details"
-	svc "books/svc"
+	global "myservices/books/global"
+	handlers "myservices/books/handlers"
+	pb "myservices/books/pb/details"
+	svc "myservices/books/svc"
 
 	_ "expvar"
 	_ "github.com/mkevac/debugcharts"

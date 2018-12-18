@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	global "books/global"
-	pb "books/pb/details"
 	"context"
+	global "myservices/books/global"
+	pb "myservices/books/pb/details"
 	"time"
 )
 

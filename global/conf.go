@@ -11,7 +11,7 @@ import (
 type conf struct {
 	ServiceName     string `yaml:"service_name"`
 	ProjectRealPath string
-	DB_BOOK         mysqlConf `yaml:"db_book"`
+	DB_DEFAULT      mysqlConf `yaml:"db_default"`
 	Zipkin          zipkinConf
 	Redis           redisConf
 	HttpServer      struct {
@@ -76,7 +76,7 @@ const (
 	RUN_MODE_K8S       = "k8s"
 )
 
-var ProjectRealPath = os.Getenv("GOPATH") + "/src/books"
+var ProjectRealPath = os.Getenv("GOPATH") + "/src/myservices/books"
 var RuntimeRealPath = ProjectRealPath + "/runtime"
 var LogPath = RuntimeRealPath + "/logs"
 

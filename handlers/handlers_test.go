@@ -5,8 +5,8 @@ import (
 	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/mock"
-	comments "pb/comments"
-	pb "pb/details"
+	comments "myservices/pb/comments"
+	pb "myservices/pb/details"
 	"testing"
 )
 

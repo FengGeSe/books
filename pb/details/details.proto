@@ -9,7 +9,7 @@ syntax = "proto3";
 package details;
 
 import "github.com/tuneinc/truss/deftree/googlethirdparty/annotations.proto";
-import "myservices/pb/comments/comments.proto";
+import "myservices/books/pb/comments/comments.proto";
 
 service BookDetails {
     // Echo "echos" the incoming string

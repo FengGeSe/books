@@ -1,15 +1,15 @@
 package handlers
 
 import (
-	global "books/global"
-	models "books/models"
-	commentspb "books/pb/comments"
-	pb "books/pb/details"
 	"context"
 	"fmt"
 	zipkingo "github.com/openzipkin/zipkin-go"
 	"github.com/pquerna/ffjson/ffjson"
 	"google.golang.org/grpc"
+	global "myservices/books/global"
+	models "myservices/books/models"
+	commentspb "myservices/books/pb/comments"
+	pb "myservices/books/pb/details"
 	"time"
 )
 
@@ -22,7 +22,7 @@ type bookdetailsService struct{}
 
 // Detail implements Service.
 func (s bookdetailsService) Detail(ctx context.Context, in *pb.DetailReq) (*pb.DetailResp, error) {
-	//zipkin
+	// zipkin
 	var newCtx context.Context
 	var zipkinSpan zipkingo.Span
 	{
@@ -48,6 +48,7 @@ func (s bookdetailsService) Detail(ctx context.Context, in *pb.DetailReq) (*pb.D
 
 	var resp pb.DetailResp
 
+	//TODO
 	var redisKey = fmt.Sprintf("book_detail_%d", in.Id)
 
 	book := getBookBase(newCtx, in, redisKey)

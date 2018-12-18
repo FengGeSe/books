@@ -21,8 +21,8 @@ import (
 	"github.com/pkg/errors"
 
 	// This Service
-	pb "books/pb/details"
-	svc "books/svc"
+	pb "myservices/books/pb/details"
+	svc "myservices/books/svc"
 )
 
 var (

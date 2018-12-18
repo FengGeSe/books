@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	pb "books/pb/details"
 	"context"
 	"github.com/go-kit/kit/metrics"
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
 	stdprometheus "github.com/prometheus/client_golang/prometheus"
+	pb "myservices/books/pb/details"
 	"time"
 )
 
@@ -14,13 +14,13 @@ func Instrumenting() SvcMiddleware {
 		fieldKeys := []string{"method", "error"}
 		requestCount := kitprometheus.NewCounterFrom(stdprometheus.CounterOpts{
 			Namespace: "books_business",
-			Subsystem: "book_details",
+			Subsystem: "books",
 			Name:      "request_count",
 			Help:      "Number of requests received.",
 		}, fieldKeys)
 		requestLatency := kitprometheus.NewSummaryFrom(stdprometheus.SummaryOpts{
 			Namespace: "books_business",
-			Subsystem: "book_details",
+			Subsystem: "books",
 			Name:      "request_latency_microseconds",
 			Help:      "Total duration of requests in microseconds.",
 		}, fieldKeys)

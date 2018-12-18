@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	global "books/global"
-	pb "books/pb/details"
 	"context"
 	"github.com/afex/hystrix-go/hystrix"
 	"github.com/go-kit/kit/endpoint"
+	global "myservices/books/global"
+	pb "myservices/books/pb/details"
 )
 
 func Hystrix(commandName string) endpoint.Middleware {

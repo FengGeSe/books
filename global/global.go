@@ -1,8 +1,8 @@
 package global
 
 import (
-	models "books/models"
 	"github.com/openzipkin/zipkin-go/reporter"
+	models "myservices/books/models"
 	"os"
 	"strings"
 )

@@ -1,12 +1,12 @@
 package handlers
 
 import (
-	pb "books/pb/details"
-	svc "books/svc"
 	"github.com/go-kit/kit/circuitbreaker"
 	"github.com/go-kit/kit/ratelimit"
 	"github.com/sony/gobreaker"
 	"golang.org/x/time/rate"
+	pb "myservices/books/pb/details"
+	svc "myservices/books/svc"
 	"time"
 )
 

@@ -6,7 +6,7 @@
 package handlers
 
 import (
-	pb "books/pb/details"
+	pb "myservices/books/pb/details"
 )
 
 // Detail implements Service.

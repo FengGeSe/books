@@ -1,10 +1,10 @@
 package global
 
 import (
-	"github.com/jinzhu/gorm"
-	_ "github.com/go-sql-driver/mysql"
-	"fmt"
 	"context"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
 	"time"
 )
 
@@ -12,8 +12,8 @@ type db struct {
 	*gorm.DB
 }
 
-func (this *db) WarpFind(ctx context.Context, out interface{}, where ...interface{}) (*gorm.DB) {
-	span, _, err := zipkin("db",ctx)
+func (this *db) WarpFind(ctx context.Context, out interface{}, where ...interface{}) *gorm.DB {
+	span, _, err := zipkin("db", ctx)
 	if err == nil {
 		defer func() {
 			span.Annotate(time.Now(), "out db")
@@ -24,7 +24,7 @@ func (this *db) WarpFind(ctx context.Context, out interface{}, where ...interfac
 	return this.DB.Find(out, where)
 }
 
-func (this *db) WarpRawScan(ctx context.Context, dest interface{}, sql string, values ...interface{}) (*gorm.DB) {
+func (this *db) WarpRawScan(ctx context.Context, dest interface{}, sql string, values ...interface{}) *gorm.DB {
 	span, _, err := zipkin(
 		"db",
 		ctx,
@@ -48,7 +48,7 @@ func (this *db) WarpRawScan(ctx context.Context, dest interface{}, sql string, v
 }
 
 func newBookDB() *db {
-	conf := Conf.DB_BOOK
+	conf := Conf.DB_DEFAULT
 	entity, err := gorm.Open(
 		conf.Driver,
 		fmt.Sprintf(

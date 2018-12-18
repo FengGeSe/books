@@ -20,7 +20,7 @@ import (
 	"github.com/pkg/errors"
 
 	// This service
-	pb "books/pb/details"
+	pb "myservices/books/pb/details"
 )
 
 const contentType = "application/json; charset=utf-8"

@@ -9,7 +9,7 @@ import (
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 
 	// This Service
-	pb "books/pb/details"
+	pb "myservices/books/pb/details"
 )
 
 // MakeGRPCServer makes a set of endpoints available as a gRPC BookDetailsServer.
